@@ -18,24 +18,37 @@ const SliderComponent = ({ //Listing all the props that is needed to pass to our
     //my(marginY) reps [marginTop & margginBottom]
     //stack component  from MUI will allow us stack the components vertically
     <Stack my={1.4}> 
+        <Stack gap={1}>
         <Typography variant='subtitle2'>{label}</Typography>
         <Typography variant='h5'>
         {unit} {amount}    
         </Typography>   
     {/*This code displays the label, unit and amount*/}
-    
-        <Slider //This code displays the slider and we then pass the props to the slider component
-            min={min}
-            max={max}
-            defaultValue={defaultValue}
-            aria-label='Default'
-            valueLabelDisplay='auto'
-            onChange={onChange}
-            value={value}
-            marks
-            step={steps}
-        />
     </Stack>
+
+     <Slider //This code displays the slider and we then pass the props to the slider component
+     min={min}
+     max={max}
+     defaultValue={defaultValue}
+     aria-label='Default'
+     valueLabelDisplay='auto'
+     onChange={onChange}
+     value={value}
+     marks
+     step={steps}
+    />
+
+    <Stack direction='row' justifyContent='space-between'>
+        {/*This code displays the min and max values of the slider*/}
+        {/*The Stack Component from MUI will be used to stack the componnents horizontally*/}
+        <Typography variant="caption" color="text.secondary">
+            {unit} {min}
+        </Typography>
+        <Typography variant='caption' color='text.secondary'>
+            {unit} {max}
+        </Typography>
+    </Stack>
+ </Stack>
   )
 }
 
