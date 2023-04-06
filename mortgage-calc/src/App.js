@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Grid } from "@mui/material";
 import { Container } from "@mui/system";
 import Navbar from './Components/Navbar';
@@ -8,6 +8,14 @@ import TenureSelect from "./Components/TenureSelect";
 
 
 function App() {
+  const [data, setData] = useState({ //Declaring a state to store the value of the sliders using the useState hook
+    //Passing these values as the default values for our slider component
+    homeValue: 3000, 
+    downPayment: 3000 * 0.2,
+    loanAmount: 3000 * 0.8,
+    loanTerm: 5,
+    interestRate: 5
+  })
   //Importing our Navbar component and rendering it to our app
   return (
     <div className="App">
@@ -17,7 +25,10 @@ function App() {
         <Grid item xs={12} md={6}> 
         {/* Grid component is used to create a responsive layout that adapts to different screen sizes*/}
         {/*Grid container reps the parent elemet=nt while Grid item reps the child element while also spacing in between the grid items*/}
-          <SliderSelect />
+          <SliderSelect //Passing the data and setData state as a prop to the SliderSelect component
+           data={data} 
+           setData={setData} 
+          />
           <TenureSelect />
           </Grid>
           <Grid item xs={12} md={6}>
