@@ -23,6 +23,24 @@ const SliderSelect = ({data, setData}) => { //destructuring our props being rece
             label="Home Value"
             value={data.homeValue}
             />
+
+        <SliderComponent
+            onChange={(e, value) => 
+            setData({
+                ...data,
+                downPayment: value.toFixed(0),
+                loanAmount: (data.homeValue - value).toFixed(0),
+            })
+            }
+            defaultValue={data.downPayment}
+            min={0}
+            max={data.homeValue}
+            steps={100}
+            unit="$"
+            amount={data.downPayment}
+            label="Down Payment"
+            value={data.downPayment}
+        />
     </div>
   )
 }
