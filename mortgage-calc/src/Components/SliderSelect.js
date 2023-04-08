@@ -1,11 +1,13 @@
 import React from 'react';
 import SliderComponent from './Common/SliderComponent';
 
-const SliderSelect = ({data, setData}) => { //destructuring our props being received in our app.js and cerating a bank loan limit 0f 10000 which is the maximum one can borrow from our bank.
+const SliderSelect = ({data, setData}) => { 
+//destructuring our props being received in our app.js and cerating a bank loan limit 0f 10000 which is the maximum one can borrow from our bank.
     const bank_limit = 10000;
   return (
     <div>
         <SliderComponent 
+        //Creating the home value slider component
             onChange={(e, value) => {
                 setData({
                     ...data,
@@ -25,6 +27,7 @@ const SliderSelect = ({data, setData}) => { //destructuring our props being rece
             />
 
         <SliderComponent
+        //Creating the down payment slider
             onChange={(e, value) => 
             setData({
                 ...data,
@@ -43,6 +46,7 @@ const SliderSelect = ({data, setData}) => { //destructuring our props being rece
         />
 
         <SliderComponent
+        //Creating the loan amount slider 
             onChange={(e, value) => 
                 setData({
                     ...data,
@@ -58,6 +62,24 @@ const SliderSelect = ({data, setData}) => { //destructuring our props being rece
             amount={data.loanAmount}
             label="Loan Amount"
             value={data.loanAmount}
+        />
+
+        <SliderComponent
+        //Creating the interest rate slider
+            onChange={(e, value) => 
+                setData({
+                    ...data,
+                    interestRate: value,
+                })
+            }
+            defaultValue={data.interestRate}
+            min={2}
+            max={18}
+            steps={0.5}
+            unit="%"
+            amount={data.interestRate}
+            label="Interest Rate"
+            value={data.interestRate}
         />
     </div>
   )

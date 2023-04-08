@@ -42,10 +42,10 @@ const SliderComponent = ({ //Listing all the props that is needed to pass to our
         {/*This code displays the min and max values of the slider*/}
         {/*The Stack Component from MUI will be used to stack the componnents horizontally*/}
         <Typography variant="caption" color="text.secondary">
-            {unit} {min}
+            {min}  {unit} 
         </Typography>
         <Typography variant='caption' color='text.secondary'>
-            {unit} {max}
+            {max}  {unit} 
         </Typography>
     </Stack>
  </Stack>
