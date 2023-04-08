@@ -25,11 +25,16 @@ function App() {
         <Grid item xs={12} md={6}> 
         {/* Grid component is used to create a responsive layout that adapts to different screen sizes*/}
         {/*Grid container reps the parent elemet=nt while Grid item reps the child element while also spacing in between the grid items*/}
-          <SliderSelect //Passing the data and setData state as a prop to the SliderSelect component
-           data={data} 
-           setData={setData} 
+          <SliderSelect 
+            data={data} 
+            setData={setData} 
+            //Passing the data and setData state as props to the SliderSelect component
           />
-          <TenureSelect />
+          <TenureSelect 
+            data={data} 
+            setData={setData} 
+            //Passing the data and setData state as props to the TenureSelect component
+          />
           </Grid>
           <Grid item xs={12} md={6}>
           {/*xs means that the screen will take up the entire width of the screen on extra small screens*/}
