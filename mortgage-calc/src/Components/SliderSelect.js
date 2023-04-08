@@ -24,7 +24,7 @@ const SliderSelect = ({data, setData}) => {
             amount={data.homeValue}
             label="Home Value"
             value={data.homeValue}
-            />
+        />
 
         <SliderComponent
         //Creating the down payment slider
