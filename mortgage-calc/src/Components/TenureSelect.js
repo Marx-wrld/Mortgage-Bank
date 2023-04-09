@@ -9,7 +9,9 @@ const TenureSelect = ({data, setData}) => {
   const HandleChange = (event) => { //HandleChange function that will be used to set the tenure state
     setData({...data, loanTerm: event.target.value});
   }
-  return ()
+  return (
+     <div>Tenure</div>
+)
 };
 
 export default TenureSelect
