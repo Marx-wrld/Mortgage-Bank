@@ -31,4 +31,4 @@ const TenureSelect = ({data, setData}) => {
   )
 };
 
-export default TenureSelect;
+export default TenureSelect
