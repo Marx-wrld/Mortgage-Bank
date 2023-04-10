@@ -7,7 +7,8 @@ import './index.css';
 import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render( //importing the theme.js file in our index.js file and wrapping the app with the ThemeProvider
+root.render( 
+  //importing the theme.js file in our index.js file and wrapping the app with the ThemeProvider
   <React.StrictMode>
     <ThemeProvider theme={theme}>
     <App />
@@ -15,5 +16,4 @@ root.render( //importing the theme.js file in our index.js file and wrapping the
     </ThemeProvider>
   </React.StrictMode>
 );
-
 
