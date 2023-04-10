@@ -20,6 +20,7 @@ function App() {
   return (
     <div className="App">
      <Navbar />
+    
      <Container maxWidth="xl" sx={{marginTop:4}}> {/*Adding inline style to the container component in Material UI*/}
       <Grid container spacing={5} alignItems="center">
         <Grid item xs={12} md={6}> 
@@ -30,18 +31,26 @@ function App() {
             setData={setData} 
             //Passing the data and setData state as props to the SliderSelect component
           />
+
           <TenureSelect 
             data={data} 
             setData={setData} 
             //Passing the data and setData state as props to the TenureSelect component
           />
+
           </Grid>
+
           <Grid item xs={12} md={6}>
           {/*xs means that the screen will take up the entire width of the screen on extra small screens*/}
           {/*md means that the grid item will take up half the screen on medium and bigger screens */}
-          <Result />
+          
+          <Result data={data}
+          //Passing the data state as prop to the result
+          />
+
           </Grid>
         </Grid>
+
       </Container>
     </div>
   );
