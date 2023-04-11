@@ -23,15 +23,27 @@ const Result = ({ data }) => {
       {
         label: "Ratio of Principle and Interest",
         data: [homeValue, totalInterestGenerated],
-        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
-        borderColor: ["rgba(255, 99, 132, 1), rgba(54, 162, 235, 1)"],
+        backgroundColor: ["rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.5)"],
+        borderColor: ["rgba(255, 99, 132, 1), rgba(54, 162, 235, 0.8)"],
         borderWidth: 1
       },
     ],
   }
    return (
-    <div>Result</div>
-  )
+    <Stack  gap={3}>
+    <Typography textAlign="center"variant="h5">
+      Monthly Payment: $ 
+      {
+      monthlyPayment.toFixed(2)
+      }
+    </Typography>
+    <Stack direction="row" justifyContent="center">
+      <div>
+        <Pie data={pieChartData} />
+      </div>
+      </Stack>
+      </Stack>
+  );
 }
 
 export default Result
